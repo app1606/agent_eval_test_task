@@ -23,11 +23,6 @@ python3 ./scripts/evaluation.py --model=CLAUDE --max_attempts=2
 
 Here `--model` argument may take two values: "CLAUDE" or "QWEN", it allows user to select respective model. `--max_attempts` argument is responsible for the number of requests to the model per try. 
 
-
-**important to note**
-
-Folder `scripts` contains scripts for data creation, preparation and model evaluation. `notebooks/Test_Task_Formality_usage_examples.ipynb` [displays](https://colab.research.google.com/drive/1jyXCSTDfGzwtiLzvWNl2XGCFeidKF0U8?usp=sharing) how to run the scripts to reproduce the results without extra comments from my sides. To do so one has to run the notebook in Colab and add all files from the `scripts` folder to the `/content` folder in Colab Notebook.  
-
 ## Dataset
 
 The Python subset of [HumanEvalFix](https://huggingface.co/datasets/bigcode/humanevalpack) dataset was used to evaluate the models. 
