@@ -11,8 +11,6 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 from anthropic import Anthropic
 from mlx_lm import load, generate
 
-
-MAX_ATTEMPTS = 5
 MODEL_NAME = "Qwen/Qwen3-0.6B"
 
 client = Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
@@ -248,9 +246,10 @@ def fix_code(buggy_code, test_code, prompt):
 
     return result.get("fixed_code")
 
-def set_models(model_type):
-    global MODEL_TYPE, QWEN_MODEL, QWEN_TOKENIZER
+def set_models(model_type, max_attempts):
+    global MODEL_TYPE, QWEN_MODEL, QWEN_TOKENIZER, MAX_ATTEMPTS
     MODEL_TYPE = model_type
+    MAX_ATTEMPTS = max_attempts
 
     if MODEL_TYPE == "QWEN":
         QWEN_MODEL, QWEN_TOKENIZER = load_model_tokenizer()
