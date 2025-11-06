@@ -6,7 +6,7 @@ from tqdm import tqdm
 
 ds = load_dataset("bigcode/humanevalpack", split="test")
 
-MODEL = "CLAUDE"
+MODEL = "QWEN"
 
 set_models(MODEL)
 
